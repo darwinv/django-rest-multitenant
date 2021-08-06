@@ -9,7 +9,7 @@ verify_ssl = true
 django = "==2.2"
 django-tenants = "*"
 django-environ = "*"
-psycopg2 = "==2.8.6"
+psycopg2 =  "*"
 djangorestframework = "==3.10"
 django-cors-headers = "*"
 djangorestframework-simplejwt = "*"

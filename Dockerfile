@@ -3,9 +3,8 @@ FROM ubuntu:20.04
 
 # Instalamos la dependencias, por default nos trae python 3.8
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y python3-pip python3.8-dev && \
-    apt-get install vim && \
-    apt-get install git -y postgresql-client postgresql-dev
+    apt-get install -y --no-install-recommends gcc python3-pip python3.8-dev && \
+    apt-get install -y git postgresql-client vim libpq-dev g++
 
 
 # colocando el PYTHONUNBUFFERED a un valor no vacío, podemos
@@ -31,4 +30,4 @@ ADD ./Pipfile.lock /app/
 
 
 # instalamos la dependencias
-RUN pipenv install --dev
+RUN pipenv install --dev --system --ignore-pipfile
